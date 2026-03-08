@@ -38,28 +38,47 @@
       href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="rose-edge rose-edge-left" aria-hidden="true"></div>
-    <div class="rose-edge rose-edge-right" aria-hidden="true"></div>
-
-    <div class="petals" aria-hidden="true">
-      <span class="petal"></span>
-      <span class="petal"></span>
-      <span class="petal"></span>
-      <span class="petal"></span>
-      <span class="petal"></span>
-      <span class="petal"></span>
+    <div id="introOverlay" class="intro-overlay" aria-hidden="true">
+      <div class="intro-glow"></div>
+      <span class="intro-star"></span>
+      <span class="intro-star"></span>
+      <span class="intro-star"></span>
+      <span class="intro-star"></span>
+      <span class="intro-star"></span>
+      <span class="intro-star"></span>
+      <span class="intro-star"></span>
+      <span class="intro-star"></span>
     </div>
 
-    <header class="top-header" aria-hidden="true">
-      <img
-        class="top-header-floral"
-        src="./img/parte_de_arriba_flores.png"
-        alt=""
-      />
-    </header>
+    <div id="siteShell" class="site-shell">
+      <div class="rose-edge rose-edge-left" aria-hidden="true"></div>
+      <div class="rose-edge rose-edge-right" aria-hidden="true"></div>
+
+      <div class="petals" aria-hidden="true">
+        <span class="petal"></span>
+        <span class="petal"></span>
+        <span class="petal"></span>
+        <span class="petal"></span>
+        <span class="petal"></span>
+        <span class="petal"></span>
+      </div>
+
+      <header class="top-header" aria-hidden="true">
+        <img
+          class="top-header-floral"
+          src="./img/parte_de_arriba_flores.png"
+          alt=""
+        />
+      </header>
 
     <main class="invitation">
       <section class="hero card">
@@ -100,6 +119,17 @@
             <h3>Dress code</h3>
             <p>Casual</p>
           </article>
+        </div>
+        <div class="map-wrap">
+          <a
+            class="btn-location"
+            href="https://www.google.com/maps?q=10.479705810546875,-66.94123840332031&z=17&hl=es"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            Ubicacion
+          </a>
         </div>
         <div class="section-memories">
           <figure class="memory-item">
@@ -145,28 +175,29 @@
         </a>
       </section>
     </main>
-    <footer class="bottom-footer" aria-hidden="true">
-      <img
-        class="bottom-footer-floral"
-        src="./img/parte_de_abajo_flores.png"
-        alt=""
-      />
-    </footer>
-    <button id="audioToggle" class="audio-toggle" type="button" aria-label="Desactivar musica" title="Musica">
-      <img
-        id="audioToggleIcon"
-        src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='1.5' y='1.5' width='61' height='61' rx='30.5' fill='%23fff5f9' stroke='%23e8a3bb' stroke-width='3'/%3E%3Cpath d='M17 37h9l12 10V17L26 27h-9z' fill='%23d06e90'/%3E%3Cpath d='M45 23c4 4 4 14 0 18' stroke='%23d06e90' stroke-width='4' stroke-linecap='round' fill='none'/%3E%3Cpath d='M50 19c7 7 7 20 0 27' stroke='%23d06e90' stroke-width='4' stroke-linecap='round' fill='none'/%3E%3C/svg%3E"
-        alt=""
-        aria-hidden="true"
-      />
-    </button>
-    <audio id="inviteAudio" preload="metadata">
-      <source
-        src="./img/WhatsApp%20Audio%202026-03-08%20at%2012.09.40%20PM.mpeg"
-        type="audio/mpeg"
-      />
-      Tu navegador no soporta audio HTML5.
-    </audio>
+      <footer class="bottom-footer" aria-hidden="true">
+        <img
+          class="bottom-footer-floral"
+          src="./img/parte_de_abajo_flores.png"
+          alt=""
+        />
+      </footer>
+      <button id="audioToggle" class="audio-toggle" type="button" aria-label="Desactivar musica" title="Musica">
+        <img
+          id="audioToggleIcon"
+          src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='1.5' y='1.5' width='61' height='61' rx='30.5' fill='%23fff5f9' stroke='%23e8a3bb' stroke-width='3'/%3E%3Cpath d='M17 37h9l12 10V17L26 27h-9z' fill='%23d06e90'/%3E%3Cpath d='M45 23c4 4 4 14 0 18' stroke='%23d06e90' stroke-width='4' stroke-linecap='round' fill='none'/%3E%3Cpath d='M50 19c7 7 7 20 0 27' stroke='%23d06e90' stroke-width='4' stroke-linecap='round' fill='none'/%3E%3C/svg%3E"
+          alt=""
+          aria-hidden="true"
+        />
+      </button>
+      <audio id="inviteAudio" preload="metadata">
+        <source
+          src="./img/WhatsApp%20Audio%202026-03-08%20at%2012.09.40%20PM.mpeg"
+          type="audio/mpeg"
+        />
+        Tu navegador no soporta audio HTML5.
+      </audio>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>

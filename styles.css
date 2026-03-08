@@ -25,6 +25,47 @@ body {
   overflow-x: hidden;
 }
 
+.site-shell {
+  opacity: 0;
+}
+
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #fff9e8 0%, #ffeeb8 62%, #ffe39a 100%);
+}
+
+.intro-glow {
+  width: min(40vw, 300px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 236, 0.98) 0%, rgba(255, 228, 137, 0.82) 50%, rgba(255, 228, 137, 0) 75%);
+  filter: blur(1px);
+}
+
+.intro-star {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #fff1b8;
+  border-radius: 50%;
+  box-shadow: 0 0 18px rgba(255, 244, 199, 0.98), 0 0 36px rgba(255, 214, 92, 0.85);
+  opacity: 0;
+}
+
+.intro-star:nth-child(2) { top: 24%; left: 21%; }
+.intro-star:nth-child(3) { top: 19%; left: 44%; }
+.intro-star:nth-child(4) { top: 31%; left: 63%; }
+.intro-star:nth-child(5) { top: 42%; left: 30%; }
+.intro-star:nth-child(6) { top: 55%; left: 68%; }
+.intro-star:nth-child(7) { top: 66%; left: 42%; }
+.intro-star:nth-child(8) { top: 73%; left: 57%; }
+.intro-star:nth-child(9) { top: 47%; left: 82%; }
+
 .top-header {
   position: relative;
   z-index: 3;
@@ -294,6 +335,32 @@ h1 {
 
 .details-grid p {
   margin: 0;
+}
+
+.map-wrap {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.btn-location {
+  display: inline-block;
+  padding: 0.75rem 1.3rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #d77b97, #ed9eb3);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(189, 84, 115, 0.32);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-location i {
+  margin-right: 0.45rem;
+}
+
+.btn-location:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(189, 84, 115, 0.4);
 }
 
 .countdown {

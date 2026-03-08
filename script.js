@@ -1,53 +1,91 @@
 gsap.registerPlugin(ScrollTrigger);
 
-const timeline = gsap.timeline({ defaults: { ease: "power3.out" } });
+const introOverlay = document.getElementById("introOverlay");
+const siteShell = document.getElementById("siteShell");
 
-timeline
-  .from(".hero-title-wrap", { y: 24, opacity: 0, duration: 0.9 })
-  .from(".eyebrow", { y: 18, opacity: 0, duration: 0.6 }, "-=0.7")
-  .from("h1", { y: 20, opacity: 0, duration: 0.7 }, "-=0.45")
-  .from(".girl-name", { scale: 0.84, opacity: 0, duration: 0.6 }, "-=0.4")
-  .from(".hero-photo-frame", { y: 28, opacity: 0, duration: 0.8 }, "-=0.45")
-  .from(".hero-copy", { y: 20, opacity: 0, duration: 0.6 }, "-=0.4")
-  .from(".btn-primary", { y: 14, opacity: 0, duration: 0.5 }, "-=0.3");
+function runLandingAnimations() {
+  const timeline = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-gsap.utils.toArray(".reveal").forEach((section) => {
-  gsap.from(section, {
-    y: 56,
-    opacity: 0,
-    duration: 0.9,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: section,
-      start: "top 80%",
-      once: true,
-    },
-  });
-});
+  timeline
+    .from(".hero-title-wrap", { y: 24, opacity: 0, duration: 0.9 })
+    .from(".eyebrow", { y: 18, opacity: 0, duration: 0.6 }, "-=0.7")
+    .from("h1", { y: 20, opacity: 0, duration: 0.7 }, "-=0.45")
+    .from(".girl-name", { scale: 0.84, opacity: 0, duration: 0.6 }, "-=0.4")
+    .from(".hero-photo-frame", { y: 28, opacity: 0, duration: 0.8 }, "-=0.45")
+    .from(".hero-copy", { y: 20, opacity: 0, duration: 0.6 }, "-=0.4")
+    .from(".btn-primary", { y: 14, opacity: 0, duration: 0.5 }, "-=0.3");
 
-gsap.utils.toArray(".memory-item, .bee-video-wrap").forEach((item, index) => {
-  gsap.from(item, {
-    y: 24,
-    opacity: 0,
-    scale: 0.96,
-    duration: 0.75,
-    delay: index * 0.06,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: item,
-      start: "top 88%",
-      once: true,
-    },
+  gsap.utils.toArray(".reveal").forEach((section) => {
+    gsap.from(section, {
+      y: 56,
+      opacity: 0,
+      duration: 0.9,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: section,
+        start: "top 80%",
+        once: true,
+      },
+    });
   });
 
-  gsap.to(item, {
-    y: index % 2 === 0 ? -6 : -3,
-    duration: 2.3 + index * 0.12,
-    repeat: -1,
+  gsap.utils.toArray(".memory-item, .bee-video-wrap").forEach((item, index) => {
+    gsap.from(item, {
+      y: 24,
+      opacity: 0,
+      scale: 0.96,
+      duration: 0.75,
+      delay: index * 0.06,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: item,
+        start: "top 88%",
+        once: true,
+      },
+    });
+
+    gsap.to(item, {
+      y: index % 2 === 0 ? -6 : -3,
+      duration: 2.3 + index * 0.12,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+    });
+  });
+}
+
+function startMagicalIntro() {
+  if (!introOverlay || !siteShell) {
+    gsap.set(".site-shell", { autoAlpha: 1 });
+    runLandingAnimations();
+    return;
+  }
+
+  gsap.set(siteShell, { autoAlpha: 0 });
+
+  gsap.to(".intro-star", {
+    scale: 1.35,
+    opacity: 1,
+    duration: 0.55,
     yoyo: true,
+    repeat: 2,
+    stagger: 0.08,
     ease: "sine.inOut",
   });
-});
+
+  gsap
+    .timeline({
+      defaults: { ease: "power2.out" },
+      onComplete: () => {
+        gsap.set(introOverlay, { display: "none" });
+        runLandingAnimations();
+      },
+    })
+    .fromTo(".intro-glow", { scale: 0.45, opacity: 0.25 }, { scale: 1.25, opacity: 1, duration: 1.05 })
+    .to(".intro-glow", { scale: 2.2, opacity: 0, duration: 0.75 }, "-=0.05")
+    .to(introOverlay, { autoAlpha: 0, duration: 0.45 }, "-=0.2")
+    .to(siteShell, { autoAlpha: 1, duration: 0.6 }, "-=0.3");
+}
 
 gsap.utils.toArray(".petal").forEach((petal, index) => {
   gsap.to(petal, {
@@ -143,3 +181,5 @@ if (inviteAudio && audioToggle) {
     }
   });
 }
+
+window.addEventListener("load", startMagicalIntro);
