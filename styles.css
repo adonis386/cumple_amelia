@@ -1,0 +1,406 @@
+:root {
+  --cream-pink: #fbe4e6;
+  --rose: #e8a6b6;
+  --rose-dark: #cb7187;
+  --text-main: #5c3a45;
+  --card-bg: rgba(255, 255, 255, 0.68);
+  --shadow: 0 16px 30px rgba(128, 66, 83, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  color: var(--text-main);
+  background: radial-gradient(circle at top right, #fff1f3 0%, var(--cream-pink) 48%, #f7dde3 100%);
+  overflow-x: hidden;
+}
+
+.top-header {
+  position: relative;
+  z-index: 3;
+  width: min(620px, 92%);
+  margin: 0.35rem auto 0;
+  pointer-events: none;
+}
+
+.top-header-floral {
+  width: 100%;
+  height: 92px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: 30px 30px 0 0;
+}
+
+.invitation {
+  position: relative;
+  z-index: 2;
+  width: min(620px, 92%);
+  margin: 0 auto;
+  padding: 0.55rem 0 1rem;
+}
+
+.card {
+  position: relative;
+  backdrop-filter: blur(8px);
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: 34px;
+  padding: clamp(1.2rem, 2.6vw, 2.4rem);
+  margin-bottom: 1.4rem;
+  overflow: hidden;
+}
+
+.hero {
+  text-align: center;
+  padding-top: clamp(1.4rem, 3vw, 2.1rem);
+}
+
+.bee-sticker {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 8px 14px rgba(131, 78, 40, 0.16);
+}
+
+.hero-title-wrap {
+  margin-bottom: 0.25rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #ac6076;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+h1 {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-size: clamp(2.2rem, 7vw, 4.4rem);
+  line-height: 1.1;
+  margin-top: 0.5rem;
+}
+
+.girl-name {
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  font-weight: 700;
+  color: var(--rose-dark);
+  margin: 0.4rem 0 0.9rem;
+}
+
+.hero-photo-frame {
+  width: min(100%, 320px);
+  margin: 0 auto 1rem;
+  padding: 10px;
+  border-radius: 160px 160px 24px 24px;
+  background: linear-gradient(180deg, #fff6f8 0%, #ffd6df 100%);
+  box-shadow: 0 12px 24px rgba(236, 168, 190, 0.45);
+}
+
+.hero-photo {
+  width: 100%;
+  height: 370px;
+  object-fit: cover;
+  border-radius: 150px 150px 20px 20px;
+  display: block;
+}
+
+.hero-copy {
+  width: min(64ch, 100%);
+  margin: 0 auto 1.2rem;
+  line-height: 1.65;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #d77b97, #ed9eb3);
+  color: #fff;
+  padding: 0.85rem 1.4rem;
+  box-shadow: 0 8px 18px rgba(189, 84, 115, 0.36);
+}
+
+.btn-secondary {
+  background: #fff;
+  color: var(--rose-dark);
+  border: 2px solid rgba(215, 123, 151, 0.45);
+  padding: 0.7rem 1.2rem;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  transform: translateY(-3px);
+}
+
+.details h2,
+.countdown h2,
+.rsvp h2 {
+  margin-bottom: 1rem;
+  color: #8f4d60;
+}
+
+.section-memories {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.memory-item {
+  margin: 0;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.72);
+  background: #fff3f6;
+  box-shadow:
+    0 10px 20px rgba(236, 170, 192, 0.5),
+    0 0 0 6px rgba(255, 229, 239, 0.62);
+}
+
+.memory-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bee-video-wrap {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: min(170px, 50%);
+  border-radius: 999px;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  background: #fff9e8;
+  box-shadow: 0 10px 18px rgba(167, 120, 34, 0.18);
+  padding: 6px;
+}
+
+.bee-video {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: block;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.section-memories.single {
+  grid-template-columns: 1fr;
+  width: min(250px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.9rem;
+}
+
+.details-grid article {
+  background: rgba(255, 255, 255, 0.64);
+  border-radius: 16px;
+  padding: 0.9rem;
+}
+
+.details-grid h3 {
+  color: #a2586e;
+  font-size: 0.92rem;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.details-grid p {
+  margin: 0;
+}
+
+.countdown {
+  text-align: center;
+}
+
+.counter {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(70px, 1fr));
+  gap: 0.7rem;
+}
+
+.counter div {
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 16px;
+  padding: 0.8rem 0.4rem;
+}
+
+.counter span {
+  display: block;
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  font-weight: 700;
+  color: #a84c67;
+}
+
+.counter small {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.rsvp {
+  text-align: center;
+}
+
+.rose-edge {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: min(19vw, 150px);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.9;
+  background-image: url("./img/centro_flores_ambos_lados.png");
+  background-repeat: repeat-y;
+  background-position: top center;
+  background-size: 100% auto;
+}
+
+.rose-edge-left {
+  left: 0;
+}
+
+.rose-edge-right {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.petals {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.petal {
+  position: absolute;
+  width: 14px;
+  height: 20px;
+  border-radius: 60% 40% 70% 30%;
+  background: linear-gradient(180deg, #ffd8e1, #f2a7ba);
+  opacity: 0.6;
+}
+
+.petal:nth-child(1) {
+  top: 2%;
+  left: 8%;
+}
+
+.petal:nth-child(2) {
+  top: 8%;
+  left: 38%;
+}
+
+.petal:nth-child(3) {
+  top: 0;
+  left: 64%;
+}
+
+.petal:nth-child(4) {
+  top: 4%;
+  left: 84%;
+}
+
+.petal:nth-child(5) {
+  top: 6%;
+  left: 24%;
+}
+
+.petal:nth-child(6) {
+  top: 1%;
+  left: 52%;
+}
+
+.bottom-footer {
+  position: relative;
+  z-index: 3;
+  width: min(620px, 92%);
+  margin: 0 auto 0.35rem;
+  pointer-events: none;
+}
+
+.bottom-footer-floral {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+  border-radius: 0 0 30px 30px;
+}
+
+@media (max-width: 640px) {
+  .counter {
+    grid-template-columns: repeat(2, minmax(70px, 1fr));
+  }
+
+  .section-memories {
+    grid-template-columns: 1fr;
+  }
+
+  .section-memories.single,
+  .bee-video-wrap {
+    grid-column: auto;
+  }
+
+  .rose-edge-left {
+    width: min(26vw, 108px);
+  }
+
+  .rose-edge-right {
+    width: min(26vw, 108px);
+  }
+
+  .hero-photo {
+    height: 320px;
+  }
+
+  .top-header-floral {
+    height: 76px;
+  }
+
+  .bottom-footer-floral {
+    height: 84px;
+  }
+
+  .bee-sticker {
+    width: 46px;
+    height: 46px;
+    top: 12px;
+    right: 12px;
+  }
+}

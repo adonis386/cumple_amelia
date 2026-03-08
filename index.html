@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitacion | 1er Cumpleanos</title>
+    <meta
+      name="description"
+      content="Te invitamos a celebrar el primer cumpleanos de nuestra princesa."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="rose-edge rose-edge-left" aria-hidden="true"></div>
+    <div class="rose-edge rose-edge-right" aria-hidden="true"></div>
+
+    <div class="petals" aria-hidden="true">
+      <span class="petal"></span>
+      <span class="petal"></span>
+      <span class="petal"></span>
+      <span class="petal"></span>
+      <span class="petal"></span>
+      <span class="petal"></span>
+    </div>
+
+    <header class="top-header" aria-hidden="true">
+      <img
+        class="top-header-floral"
+        src="./img/parte_de_arriba_flores.png"
+        alt=""
+      />
+    </header>
+
+    <main class="invitation">
+      <section class="hero card">
+        <img class="bee-sticker" src="./img/gif.gif" alt="Abeja decorativa" />
+        <div class="hero-title-wrap">
+          <p class="eyebrow">Te invitamos a celebrar</p>
+          <h1>Mi primer cumpleanos</h1>
+        </div>
+        <p class="girl-name">Amelia Sophia Gonzalez Planas</p>
+        <div class="hero-photo-frame">
+          <img class="hero-photo" src="./img/1.jpeg" alt="Foto de Amelia Sophia" />
+        </div>
+        <p class="hero-copy">
+          Quiero compartir contigo un dia lleno de ternura, juegos y pastel para celebrar mi vuelta al sol.
+        </p>
+        <a class="btn-primary" href="#detalles">Ver detalles</a>
+      </section>
+
+      <section id="detalles" class="details card reveal">
+        <h2>Detalles del evento</h2>
+        <div class="details-grid">
+          <article>
+            <h3>Fecha</h3>
+            <p>Sabado 28 de marzo, 2026</p>
+          </article>
+          <article>
+            <h3>Hora</h3>
+            <p>3:00 PM</p>
+          </article>
+          <article>
+            <h3>Lugar</h3>
+            <p>El Paraiso</p>
+          </article>
+          <article>
+            <h3>Dress code</h3>
+            <p>Casual</p>
+          </article>
+        </div>
+        <div class="section-memories">
+          <figure class="memory-item">
+            <img src="./img/4.jpeg" alt="Foto tierna de Amelia" />
+          </figure>
+          <figure class="memory-item">
+            <img src="./img/5.jpeg" alt="Amelia con pijama rosa" />
+          </figure>
+          <div class="bee-video-wrap">
+            <video class="bee-video" src="./img/abejita.mp4" autoplay muted loop playsinline></video>
+          </div>
+        </div>
+      </section>
+
+      <section class="countdown card reveal">
+        <h2>Faltan</h2>
+        <div class="counter" aria-live="polite">
+          <div><span id="days">00</span><small>Dias</small></div>
+          <div><span id="hours">00</span><small>Horas</small></div>
+          <div><span id="minutes">00</span><small>Min</small></div>
+          <div><span id="seconds">00</span><small>Seg</small></div>
+        </div>
+        <div class="section-memories">
+          <figure class="memory-item">
+            <img src="./img/6.jpeg" alt="Amelia sentada sonriendo" />
+          </figure>
+          <figure class="memory-item">
+            <img src="./img/7.jpeg" alt="Amelia con lazo rojo" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="rsvp card reveal">
+        <h2>Confirma tu asistencia</h2>
+        <p>Nos encantaria celebrar contigo este momento tan especial.</p>
+        <div class="section-memories single">
+          <figure class="memory-item">
+            <img src="./img/8.jpeg" alt="Amelia jugando feliz" />
+          </figure>
+        </div>
+        <a class="btn-secondary" href="https://wa.me/584241454979" target="_blank" rel="noreferrer">
+          Confirmar por WhatsApp
+        </a>
+      </section>
+    </main>
+    <footer class="bottom-footer" aria-hidden="true">
+      <img
+        class="bottom-footer-floral"
+        src="./img/parte_de_abajo_flores.png"
+        alt=""
+      />
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
