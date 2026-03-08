@@ -44,12 +44,15 @@
           <p class="eyebrow">Te invitamos a celebrar</p>
           <h1>Mi primer cumpleanos</h1>
         </div>
-        <p class="girl-name">Amelia Sophia Gonzalez Planas</p>
+        <p class="girl-name">
+          <span class="name-line">Amelia Sophia</span>
+          <span class="surname-line">Gonzalez Planas</span>
+        </p>
         <div class="hero-photo-frame">
           <img class="hero-photo" src="./img/1.jpeg" alt="Foto de Amelia Sophia" />
         </div>
         <p class="hero-copy">
-          Quiero compartir contigo un dia lleno de ternura, juegos y pastel para celebrar mi vuelta al sol.
+          Quiero compartir contigo un dia lleno de ternura, juegos y torta para celebrar mi vuelta al sol.
         </p>
         <a class="btn-primary" href="#detalles">Ver detalles</a>
       </section>
@@ -59,7 +62,7 @@
         <div class="details-grid">
           <article>
             <h3>Fecha</h3>
-            <p>Sabado 28 de marzo, 2026</p>
+            <p>Sábado 28 de marzo, 2026</p>
           </article>
           <article>
             <h3>Hora</h3>
@@ -90,7 +93,7 @@
       <section class="countdown card reveal">
         <h2>Faltan</h2>
         <div class="counter" aria-live="polite">
-          <div><span id="days">00</span><small>Dias</small></div>
+          <div><span id="days">00</span><small>Días</small></div>
           <div><span id="hours">00</span><small>Horas</small></div>
           <div><span id="minutes">00</span><small>Min</small></div>
           <div><span id="seconds">00</span><small>Seg</small></div>
@@ -114,7 +117,7 @@
           </figure>
         </div>
         <a class="btn-secondary" href="https://wa.me/584241454979" target="_blank" rel="noreferrer">
-          Confirmar por WhatsApp
+          Confirmar asistencia
         </a>
       </section>
     </main>
@@ -125,6 +128,21 @@
         alt=""
       />
     </footer>
+    <button id="audioToggle" class="audio-toggle" type="button" aria-label="Desactivar musica" title="Musica">
+      <img
+        id="audioToggleIcon"
+        src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='1.5' y='1.5' width='61' height='61' rx='30.5' fill='%23fff5f9' stroke='%23e8a3bb' stroke-width='3'/%3E%3Cpath d='M17 37h9l12 10V17L26 27h-9z' fill='%23d06e90'/%3E%3Cpath d='M45 23c4 4 4 14 0 18' stroke='%23d06e90' stroke-width='4' stroke-linecap='round' fill='none'/%3E%3Cpath d='M50 19c7 7 7 20 0 27' stroke='%23d06e90' stroke-width='4' stroke-linecap='round' fill='none'/%3E%3C/svg%3E"
+        alt=""
+        aria-hidden="true"
+      />
+    </button>
+    <audio id="inviteAudio" preload="metadata">
+      <source
+        src="./img/WhatsApp%20Audio%202026-03-08%20at%2012.09.40%20PM.mpeg"
+        type="audio/mpeg"
+      />
+      Tu navegador no soporta audio HTML5.
+    </audio>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>

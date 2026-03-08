@@ -96,3 +96,50 @@ function updateCounter() {
 
 updateCounter();
 setInterval(updateCounter, 1000);
+
+const inviteAudio = document.getElementById("inviteAudio");
+const audioToggle = document.getElementById("audioToggle");
+const AUDIO_CLIP_END_SECONDS = 35;
+
+function setAudioVisualState(isPlaying) {
+  if (!audioToggle) {
+    return;
+  }
+  audioToggle.classList.toggle("is-off", !isPlaying);
+  audioToggle.setAttribute("aria-label", isPlaying ? "Desactivar musica" : "Activar musica");
+}
+
+if (inviteAudio && audioToggle) {
+  const tryPlayAudio = () =>
+    inviteAudio.play().then(() => setAudioVisualState(true)).catch(() => setAudioVisualState(false));
+
+  inviteAudio.addEventListener("timeupdate", () => {
+    if (inviteAudio.currentTime >= AUDIO_CLIP_END_SECONDS) {
+      inviteAudio.currentTime = 0;
+      if (!inviteAudio.paused) {
+        inviteAudio.play().catch(() => {});
+      }
+    }
+  });
+
+  tryPlayAudio();
+
+  const startAudioOnInteraction = () => {
+    if (inviteAudio.paused) {
+      tryPlayAudio();
+    }
+  };
+
+  window.addEventListener("click", startAudioOnInteraction, { once: true });
+  window.addEventListener("touchstart", startAudioOnInteraction, { once: true });
+  window.addEventListener("keydown", startAudioOnInteraction, { once: true });
+
+  audioToggle.addEventListener("click", () => {
+    if (inviteAudio.paused) {
+      tryPlayAudio();
+    } else {
+      inviteAudio.pause();
+      setAudioVisualState(false);
+    }
+  });
+}
