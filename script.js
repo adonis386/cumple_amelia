@@ -182,4 +182,4 @@ if (inviteAudio && audioToggle) {
   });
 }
 
-window.addEventListener("load", startMagicalIntro);
+window.addEventListener("DOMContentLoaded", startMagicalIntro);
