@@ -430,11 +430,18 @@ h1 {
   }
 
   h1 {
-    font-size: clamp(2.45rem, 9vw, 3.15rem);
+    font-size: clamp(2.8rem, 11vw, 3.8rem);
+    line-height: 1.03;
+    text-align: center;
   }
 
   .girl-name {
-    font-size: clamp(1.45rem, 6vw, 2rem);
+    font-size: clamp(1.75rem, 7vw, 2.35rem);
+    text-align: center;
+  }
+
+  .name-line {
+    font-size: 1em;
   }
 
   .counter {
@@ -479,7 +486,8 @@ h1 {
   }
 
   .hero-title-wrap {
-    padding-right: 48px;
+    padding-right: 0;
+    text-align: center;
   }
 
   .audio-toggle {
